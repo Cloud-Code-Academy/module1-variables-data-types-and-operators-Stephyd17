@@ -18,7 +18,7 @@
  * If statements are not specifically covered in the lesson this module, but review module 2 flow control section for an overview if needed.
  * Resources: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/langCon_apex_if_else.htm 
  * 
- * @author Your Name
+ * @author Stephanie Davis
  */
 
 public with sharing class VariablesDataTypesOperators {
@@ -32,7 +32,11 @@ public with sharing class VariablesDataTypesOperators {
      * @return The sum of the two numbers, or null if either number is null.
      */
     public static Integer addition(Integer a, Integer b) {  
-        return null; // Replace null with the variable you used to store the result
+        
+        if (a == null || b == null) {
+        return null; 
+        }
+        return a+b;
     }
 
     /**
@@ -44,7 +48,9 @@ public with sharing class VariablesDataTypesOperators {
      * @return The difference between the two numbers.
      */
     public static Integer subtraction(Integer a, Integer b) {
-        return null; // Replace null with the variable you used to store the result
+        Integer difference = a - b;
+
+        return difference; 
     }
 
     /**
@@ -56,7 +62,8 @@ public with sharing class VariablesDataTypesOperators {
      * @return The product of the two numbers.
      */
     public static Integer multiplication(Integer a, Integer b) {
-        return null; // Replace null with the variable you used to store the result
+        Integer multipliedNumbers = a * b;
+        return multipliedNumbers; 
     }
 
     /**
@@ -69,7 +76,10 @@ public with sharing class VariablesDataTypesOperators {
      * @return The quotient of the division, or 0 if the denominator is zero.
      */
     public static Double division(Double a, Double b) {
-        return null; // Replace null with the variable you used to store the result
+        if (b == 0){
+        return 0;
+        }
+        return a/b; 
     }
 
     /**
@@ -83,7 +93,12 @@ public with sharing class VariablesDataTypesOperators {
      * @return True if the number is even, False otherwise.
      */
     public static Boolean isEven(Integer num) {
-        return null; // Replace null with the variable you used to store the result
+        Integer remainder = math.mod(num, 2);
+        
+        if (remainder == 0){
+            return true;
+        }
+        return false; 
     }
 
     /**
