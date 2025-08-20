@@ -93,12 +93,7 @@ public with sharing class VariablesDataTypesOperators {
      * @return True if the number is even, False otherwise.
      */
     public static Boolean isEven(Integer num) {
-        Integer remainder = math.mod(num, 2);
-        
-        if (remainder == 0){
-            return true;
-        }
-        return false; 
+        return Math.mod(num, 2) == 0;
     }
 
     /**
@@ -109,10 +104,7 @@ public with sharing class VariablesDataTypesOperators {
      * @return true if the number is positive, false otherwise.
      */
     public static Boolean isPositive(Integer num) {
-        if (num > 0){
-        return true;
-        }
-        return false;
+        return num > 0;
     }
 
     /**
@@ -124,10 +116,7 @@ public with sharing class VariablesDataTypesOperators {
      * @return The concatenated string.
      */
     public static String concatenateStrings(String str1, String str2) {
-        String string1 = str1;
-        String string2 = str2;
-        String concatStrings = string1 + string2;
-        return concatStrings; 
+       return str1 + str2;
     }
 
 	/**
@@ -142,14 +131,7 @@ public with sharing class VariablesDataTypesOperators {
 	 * @return The complete sentence as a single String.
 	 */
 	public static String createSentence(String noun, String verb, String endingPunctuation) {
-        String firstWord = 'The';
-        String secondWord = noun;
-        String thirdWord = 'is';
-        String fourthWord = verb;
-        String punctuation = endingPunctuation;
-
-        String buildTheSentence = firstWord + ' ' + secondWord + ' ' + thirdWord + ' ' + fourthWord + '' + punctuation;
-		return buildTheSentence; // Replace null with the variable you used to store the result
+        return 'The ' + noun + ' is ' + verb + endingPunctuation;
 	}
 
     /**
@@ -162,11 +144,7 @@ public with sharing class VariablesDataTypesOperators {
      * @return True if the date is in the past, False otherwise.
      */
     public static Boolean isDateInPast(Date dt) {
-        Date today = Date.today();
-        if (dt < today){
-        return true; 
-        }
-        return false;
+        return dt < Date.today();
     }
 
     /**
@@ -179,11 +157,7 @@ public with sharing class VariablesDataTypesOperators {
      * @return True if the date is today or in the future, False otherwise.
      */
     public static Boolean isDateTodayOrFuture(Date dt) {
-        Date today = Date.today();
-        if (dt >= today){
-        return true; 
-        }
-        return false;
+       return dt >= Date.today();
     }
 
     /**
@@ -213,7 +187,7 @@ public with sharing class VariablesDataTypesOperators {
      * @return The average of the three numbers.
      */
     public static Double averageOfThreeNumbers(Integer a, Integer b, Integer c) {
-        Integer averageNumber = (a + b + c) / 3;
+        Double averageNumber = (Double)(a + b + c) / 3;
         return averageNumber; // Replace null with the variable you used to store the result
     }
 
@@ -280,7 +254,7 @@ public with sharing class VariablesDataTypesOperators {
         final Double SUBTRACT_FACTOR = 32.0;
         final Double MULTIPLY_FACTOR = 5.0;
         final Double DIVIDE_FACTOR = 9.0;
-    Double celsius = (fahrenheit - 32) * 5/9;
+    Double celsius = (fahrenheit - SUBTRACT_FACTOR) * MULTIPLY_FACTOR/DIVIDE_FACTOR;
         return celsius; // Replace null with the variable you used to store the result
     }
 
